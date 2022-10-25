@@ -21,6 +21,8 @@ class StudentAssignmentSerializer(serializers.ModelSerializer):
             if attrs['state'] == 'SUBMITTED' and not ('teacher' in attrs and attrs['teacher']):
                 raise serializers.ValidationError('Teacher ID has to be sent to set state to SUBMITTED')
 
+        
+
         if self.partial:
             return attrs
 

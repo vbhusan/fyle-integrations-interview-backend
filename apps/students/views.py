@@ -45,6 +45,9 @@ class AssignmentsView(generics.ListCreateAPIView):
             teacher = Teacher.objects.get(pk=request.data['teacher_id'])
             request.data['teacher'] = teacher.id
 
+
+        
+
         try:
             assignment = Assignment.objects.get(pk=request.data['id'], student__user=request.user)
         except Assignment.DoesNotExist:
